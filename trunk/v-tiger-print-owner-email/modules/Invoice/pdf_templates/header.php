@@ -23,7 +23,7 @@ $pdf-> setImageScale(1.5);
 global $logo_name;
 if ($logoradio =='true') {
 	if (file_exists('test/logo/'.$logo_name))
-	$pdf->Image('test/logo/'.$logo_name, $x='125', $y='10', $w=0, $h=0, $type='', $link='', $align='', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false);
+	$pdf->Image('test/logo/'.$logo_name, $x='20', $y='10', $w=0, $h=0, $type='', $link='', $align='', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false);
 	else {
 	$pdf->SetXY('130','15');
 	$pdf->Cell(20,$pdf->getFontSize(),$pdf_strings['MISSING_IMAGE'],0,0);
@@ -35,7 +35,7 @@ if ($logoradio =='true') {
 //set location
 $xmargin = '130';
 $ymargin = '45';
-$xdistance = '40';
+$xdistance = '25';
 $pdf->SetXY($xmargin,$ymargin);
 // define standards
 $pdf->SetFont($default_font,'',$font_size_header);
@@ -52,12 +52,6 @@ $pdf->Cell(20,$pdf->getFontSize(),$pdf_strings['INVOICEDATE'],0,0);
 //invoice date -content
 $pdf->SetX($xmargin+$xdistance);
 $pdf->Cell(20,$pdf->getFontSize(),$invoice_date,0,1);
-//due date - label
-$pdf->SetX($xmargin);
-$pdf->Cell(20,$pdf->getFontSize(),$pdf_strings['VALID_TILL'],0,0);
-//due date -content
-$pdf->SetX($xmargin+$xdistance);
-$pdf->Cell(20,$pdf->getFontSize(),$valid_till,0,1);
 //print owner if requested
 if ($owner =='true'){
 	//owner label
@@ -74,6 +68,14 @@ if ($ownerphone =='true'){
 	//owner-content
 	$pdf->SetX($xmargin+$xdistance);
 	$pdf->Cell(20,$pdf->getFontSize(),$owner_phone,0,1);
+}
+if ($owneremail =='true'){
+	//owner label
+	$pdf->SetX($xmargin);
+	$pdf->Cell(20,$pdf->getFontSize(),$pdf_strings['ISSUER_EMAIL'],0,0);
+	//owner-content
+	$pdf->SetX($xmargin+$xdistance);
+	$pdf->Cell(20,$pdf->getFontSize(),$owner_email,0,1);
 }
 //print requisition# if set
 if ($poname =='true'){
@@ -103,13 +105,13 @@ $ylocation_rightheader= $pdf->GetY();
 // ************** Begin Top-Left Header **************
 // Address
 $xmargin = '20';
-$ymargin = '55';
+$ymargin = '45';
 //senders info
 $pdf->SetTextColor(120,120,120);
 // companyBlockPositions -> x,y,width
 $companyText=decode_html ($org_name." - ".$org_address." - ".$org_code." ".$org_city);
 $pdf->SetFont($default_font,'B',6);
-$pdf->text($xmargin+1,$ymargin,$companyText);
+$pdf->text($xmargin+1,$ymargin-15,$companyText);
 $pdf->SetTextColor(0,0,0);
 $pdf->SetFont($default_font,'B',$font_size_address);
 $billPositions = array($xmargin,$ymargin,"60");

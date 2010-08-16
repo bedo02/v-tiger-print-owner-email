@@ -250,6 +250,16 @@
 																				</td>
 																				{/if}
 																			</tr>
+                                                                            <tr>
+																				<td valign="top" width="80%" class="smalltxt">{$PDFMODULLANGUAGEQUOTES.LBL_OWNER_EMAIL}
+																					<input type="checkbox" id="Quotes_owneremail_qc" name="Quotes_owneremail_qc" {$OWNERemail.Quotes} {$CHANGEPERMISSION.Quotes.owneremail}> {$APP.yes}
+																				</td>
+																				{if $MODULEVIEW=='Settings'} 
+																				<td class="smalltxt" width="20%" align="right">
+																					<input type="checkbox" id="Quotes_owneremail_perm" name="Quotes_owneremail_perm" {$EDITPERMISSION.Quotes.owneremail} > {$MOD.LBL_PDFCONFIGURATOR_ENABLE}
+																				</td>
+																				{/if}
+																			</tr>
 																			<tr>
 																				<td valign="top"  width="80%" class="smalltxt">{$PDFMODULLANGUAGEQUOTES.LBL_PDF_CONFIGURATOR_SPACE_HEADER}&nbsp;&nbsp;
 																					<select name="Quotes_spaceheadline_qv" class="detailedViewTextBox"   style="width:7%;" id="Quotes_spaceheadline_qv" {$CHANGEPERMISSION.Quotes.spaceheadline}>
@@ -700,6 +710,17 @@
 																				</td>
 																				{/if}
 																			</tr>
+                                                                            																			                                                                     <tr>
+																				<td valign="top" width="80%" class="smalltxt">{$PDFMODULLANGUAGEQUOTES.LBL_OWNER_EMAIL}
+																					<input type="checkbox" id="Invoice_owneremail_ic" name="Invoice_owneremail_ic" {$OWNEREMAIL.Invoice} {$CHANGEPERMISSION.Invoice.owneremail}> {$APP.yes}
+																				</td>
+																				{if $MODULEVIEW=='Settings'} 
+																				<td class="smalltxt" width="20%" align="right">
+																					<input type="checkbox" id="Invoice_owneremail_perm" name="Invoice_owneremail_perm" {$EDITPERMISSION.Invoice.owneremail} > {$MOD.LBL_PDFCONFIGURATOR_ENABLE}
+																				</td>
+																				{/if}
+																			</tr>
+                                                                            
 																			<tr>
 																				<td valign="top" width="80%" class="smalltxt">{$PDFMODULLANGUAGEINVOICES.LBL_PDF_PONAME}&nbsp;&nbsp;
 																					<input type="checkbox" name="Invoice_poname_ic" id="Invoice_poname_perm"  {$PONAME.Invoice} {$CHANGEPERMISSION.Invoice.poname}> {$APP.yes}
@@ -1181,6 +1202,18 @@
 																				</td>
 																				{/if}
 																			</tr>
+                                                                            
+                                                                            <tr>
+																				<td valign="top" width="80%" class="smalltxt">{$PDFMODULLANGUAGESO.LBL_OWNER_EMAIL}
+																					<input type="checkbox" id="SalesOrder_owneremail_sc" name="SalesOrder_owneremail_sc" {$OWNERemail.SalesOrder} {$CHANGEPERMISSION.SalesOrder.owneremail}> {$APP.yes}
+																				</td>
+																				{if $MODULEVIEW=='Settings'} 
+																				<td class="smalltxt" width="20%" align="right">
+																					<input type="checkbox" id="SalesOrder_owneremail_perm" name="SalesOrder_owneremail_perm" {$EDITPERMISSION.SalesOrder.owneremail} > {$MOD.LBL_PDFCONFIGURATOR_ENABLE}
+																				</td>
+																				{/if}
+																			</tr>
+                                                                            
 																			<tr>
 																				<td valign="top" width="80%" class="smalltxt">{$PDFMODULLANGUAGESO.LBL_CUSTSIGN}
 																					<input type="checkbox" id="SalesOrder_clientid_sc" name="SalesOrder_clientid_sc" {$CLIENTID.SalesOrder} {$CHANGEPERMISSION.SalesOrder.clientid}> {$APP.yes}
@@ -1653,6 +1686,17 @@
 																				</td>
 																				{/if}
 																			</tr>
+                                                                            <tr>
+																				<td valign="top" width="80%" class="smalltxt">{$PDFMODULLANGUAGEPO.LBL_OWNER_EMAIL}
+																					<input type="checkbox" id="PurchaseOrder_owneremail_pc" name="PurchaseOrder_owneremail_pc" {$OWNERemail.PurchaseOrder} {$CHANGEPERMISSION.PurchaseOrder.owneremail}> {$APP.yes}
+																				</td>
+																				{if $MODULEVIEW=='Settings'} 
+																				<td class="smalltxt" width="20%" align="right">
+																					<input type="checkbox" id="PurchaseOrder_owneremail_perm" name="PurchaseOrder_owneremail_perm" {$EDITPERMISSION.PurchaseOrder.owneremail} > {$MOD.LBL_PDFCONFIGURATOR_ENABLE}
+																				</td>
+																				{/if}
+																			</tr>
+                                                                            
 																			<tr>
 																				<td valign="top" width="80%" class="smalltxt">{$PDFMODULLANGUAGEPO.LBL_REQUISITION}
 																					<input type="checkbox" id="PurchaseOrder_poname_pc" name="PurchaseOrder_poname_pc" {$PONAME.PurchaseOrder} {$CHANGEPERMISSION.PurchaseOrder.poname}> {$APP.yes}

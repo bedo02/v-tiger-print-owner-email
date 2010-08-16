@@ -22,7 +22,7 @@ $pdf-> setImageScale(1.5);
 global $logo_name;
 if ($logoradio =='true') {
 	if (file_exists('test/logo/'.$logo_name))
-	$pdf->Image('test/logo/'.$logo_name, $x='125', $y='10', $w=0, $h=0, $type='', $link='', $align='', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false);
+	$pdf->Image('test/logo/'.$logo_name, $x='20', $y='10', $w=0, $h=0, $type='', $link='', $align='', $resize=false, $dpi=300, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false);
 	else {
 	$pdf->SetXY('130','15');
 	$pdf->Cell(20,$pdf->getFontSize(),$pdf_strings['MISSING_IMAGE'],0,0);
@@ -33,8 +33,8 @@ if ($logoradio =='true') {
 // ************* Begin Top-Right Header ***************
 //set location
 $xmargin = '130';
-$ymargin = '45';
-$xdistance = '40';
+$ymargin = '48';
+$xdistance = '25';
 $pdf->SetXY($xmargin,$ymargin);
 // define standards
 $pdf->SetFont($default_font,'',$font_size_header);
@@ -47,37 +47,43 @@ else $pdf->text($xmargin+$xdistance,$ymargin,$SalesOrder_no);
 //so date
 $pdf->SetFont($default_font,'',$font_size_header);
 //so date - label
-$pdf->text($xmargin,$ymargin+5,$pdf_strings['DATE']);
+$pdf->text($xmargin,$ymargin+4,$pdf_strings['DATE']);
 //so date -content
-$pdf->text($xmargin+$xdistance,$ymargin+5,$date_to_display);
+$pdf->text($xmargin+$xdistance,$ymargin+4,$date_to_display);
 //delivery date
 $pdf->SetFont($default_font,'',$font_size_header);
 //so delivery - label
-$pdf->text($xmargin,$ymargin+10,$pdf_strings['SODATE']);
+$pdf->text($xmargin,$ymargin+8,$pdf_strings['SODATE']);
 //so delivery -content
-$pdf->text($xmargin+$xdistance,$ymargin+10,$delivery_date);
+$pdf->text($xmargin+$xdistance,$ymargin+8,$delivery_date);
 
 //print owner if requested
 if ($owner =='true'){
 	//owner label
-	$pdf->text($xmargin,$ymargin+15,$pdf_strings['ISSUER']);
+	$pdf->text($xmargin,$ymargin+12,$pdf_strings['ISSUER']);
 	//owner-content
-	$pdf->text($xmargin+$xdistance,$ymargin+15,$owner_firstname.' '.$owner_lastname);
+	$pdf->text($xmargin+$xdistance,$ymargin+12,$owner_firstname.' '.$owner_lastname);
 }
 if ($ownerphone =='true'){
 	//owner label
-	$pdf->text($xmargin,$ymargin+20,$pdf_strings['PHONE']);
+	$pdf->text($xmargin,$ymargin+16,$pdf_strings['PHONE']);
 	//owner-content
-	$pdf->text($xmargin+$xdistance,$ymargin+20,$owner_phone);
+	$pdf->text($xmargin+$xdistance,$ymargin+16,$owner_phone);
+}
+if ($owneremail =='true'){
+	//owner label
+	$pdf->text($xmargin,$ymargin+20,$pdf_strings['ISSUER_EMAIL']);
+	//owner-content
+	$pdf->text($xmargin+$xdistance,$ymargin+20,$owner_email);
 }
 //print customer markif set
 if ($clientid =='true'){
 	if ($customermark!='')
 	{
 		// label
-		$pdf->text($xmargin,$ymargin+25,$pdf_strings['YOUR_SIGN']);
+		$pdf->text($xmargin,$ymargin+24,$pdf_strings['YOUR_SIGN']);
 		//content
-		$pdf->text($xmargin+$xdistance,$ymargin+25,$customermark);
+		$pdf->text($xmargin+$xdistance,$ymargin+24,$customermark);
 	}
 }
 // used to define the y location for the body
@@ -87,13 +93,13 @@ $ylocation_rightheader= $pdf->GetY();
 // ************** Begin Top-Left Header **************
 // Address
 $xmargin = '20';
-$ymargin = '55';
+$ymargin = '45';
 //senders info
 $pdf->SetTextColor(120,120,120);
 // companyBlockPositions -> x,y,width
 $companyText=$org_name." - ".$org_address." - ".$org_code." ".$org_city;
 $pdf->SetFont($default_font,'B',6);
-$pdf->text($xmargin+1,$ymargin,$companyText);
+$pdf->text($xmargin+1,$ymargin-15,$companyText);
 $pdf->SetTextColor(0,0,0);
 $pdf->SetFont($default_font,'B',$font_size_address);
 $billPositions = array($xmargin,$ymargin,"60");

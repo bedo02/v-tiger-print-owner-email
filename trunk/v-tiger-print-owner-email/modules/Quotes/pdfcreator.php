@@ -114,11 +114,13 @@ function createpdffile ($idnumber,$purpose='', $path='',$current_id='') {
 	$owner_firstname = $adb->query_result($result,0,'first_name');
 	$owner_id = $adb->query_result($result,0,'smownerid');
 	$owner_phone = $adb->query_result($result,0,'phone_work');
+    $owner_email = $adb->query_result($result,0,'email1');
 	//display owner?
 	$owner = $pdf_config_details['owner'];
 	//display owner phone#?
 	$ownerphone = $pdf_config_details['ownerphone'];
-	//to display at product description based on tax type
+	$owneremail = $pdf_config_details['owneremail'];
+    //to display at product description based on tax type
 	$gproddetailarray = array($pdf_config_details[gprodname],$pdf_config_details[gproddes],$pdf_config_details[gprodcom]);
 	$gproddetails = 0;
 	foreach($gproddetailarray as $key=>$value){

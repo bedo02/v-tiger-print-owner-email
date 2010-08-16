@@ -223,6 +223,7 @@ $mod_strings = Array(
 'LBL_PRINT_LOGO'=>'Do you want to print the logo image?',
 'LBL_OWNER'=>'Do you want to print the name of the person in charge?',
 'LBL_OWNER_PH'=>'Do you want to print the phone# of the person in charge?',
+'LBL_OWNER_EMAIL'=>'Do you want to print the Email of the person in charge?',
 'LBL_REQUISITION'=>'Do you want to diplay the requisition number?',
 'LBL_CARRIER'=>'Do you want to diplay the tracking number?',
 'LBL_VENDORID'=>'Do you want to diplay the vendor number?',

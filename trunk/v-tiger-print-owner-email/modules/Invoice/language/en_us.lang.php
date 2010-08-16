@@ -230,7 +230,7 @@ $mod_strings = Array(
 'LBL_PDFSUBJECT_SHN'=>'safed PDF from a shipping note with the subject',
 'LBL_PDF_FOLDERNAME'=>'safed PDFs from Invoices',
 'LBL_PDF_FOLDERDES'=>'PDF outputs which has been saved at an Invoice detail view.',
-
+'LBL_OWNER_EMAIL'=>'Do you want to print the Email of the person in charge?',
 );
 
 ?>
