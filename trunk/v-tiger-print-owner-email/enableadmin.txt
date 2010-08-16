@@ -1,0 +1,2 @@
+INSERT INTO `vtiger_settings_field` (`fieldid`, `blockid`, `name`, `iconpath`, `description`, `linkto`, `sequence`, `active`) VALUES 
+(33, 3, 'LBL_PDFCONFIGURATOR', 'pdfconfig.gif', 'LBL_PDFCONFIGURATOR_DESCRIPTION', 'index.php?module=Settings&action=PDFConfig&parenttab=Settings', 3, 0);
