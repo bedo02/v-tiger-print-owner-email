@@ -99,6 +99,7 @@ CREATE TABLE IF NOT EXISTS `crmnow_pdfconfiguration` (
   `pageradio` varchar(5) collate utf8_unicode_ci NOT NULL default 'true',
   `owner` varchar(5) collate utf8_unicode_ci NOT NULL default 'true',
   `ownerphone` varchar(5) collate utf8_unicode_ci NOT NULL default 'true',
+  `owneremail` varchar(5) collate utf8_unicode_ci NOT NULL default 'true',
   `poname` varchar(5) collate utf8_unicode_ci NOT NULL default 'true',
   `clientid` varchar(5) collate utf8_unicode_ci NOT NULL default 'true',
   `carrier` varchar(5) collate utf8_unicode_ci NOT NULL default 'true',
@@ -107,11 +108,11 @@ CREATE TABLE IF NOT EXISTS `crmnow_pdfconfiguration` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
-INSERT INTO `crmnow_pdfconfiguration` (`pdfid`, `pdfmodul`, `fontid`, `fontsizebody`, `fontsizeheader`, `fontsizefooter`, `fontsizeaddress`, `dateused`, `spaceheadline`, `summaryradio`, `gprodname`, `gproddes`, `gprodcom`, `iprodname`, `iproddes`, `iprodcom`, `pdflang`, `footerradio`, `logoradio`, `pageradio`, `owner`, `ownerphone`, `poname`, `clientid`, `carrier`) VALUES 
-(0, 'Quotes', 0, 8, 8, 7, 9, 1, 0, 'true', 'true', 'true', 'true', 'true', 'true', 'true', 'ge_de', 'false', 'false', 'false', 'false', 'false', 'false', 'false', 'false'),
-(1, 'PurchaseOrder', 0, 8, 8, 7, 9, 1, 0, 'true', 'true', 'true', 'true', 'true', 'true', 'true', 'ge_de', 'true', 'true', 'true', 'true', 'true', 'false', 'false', 'false'),
-(2, 'SalesOrder', 0, 8, 8, 7, 9, 1, 0, 'true', 'true', 'true', 'true', 'true', 'true', 'true', 'ge_de', 'true', 'true', 'true', 'false', 'false', 'false', 'false', 'false'),
-(3, 'Invoice', 0, 8, 8, 7, 9, 0, 0, 'true', 'true', 'true', 'true', 'true', 'true', 'true', 'ge_de', 'true', 'true', 'true', 'true', 'true', 'true', 'true', 'false');
+INSERT INTO `crmnow_pdfconfiguration` (`pdfid`, `pdfmodul`, `fontid`, `fontsizebody`, `fontsizeheader`, `fontsizefooter`, `fontsizeaddress`, `dateused`, `spaceheadline`, `summaryradio`, `gprodname`, `gproddes`, `gprodcom`, `iprodname`, `iproddes`, `iprodcom`, `pdflang`, `footerradio`, `logoradio`, `pageradio`, `owner`, `ownerphone`, `owneremail`, `poname`, `clientid`, `carrier`) VALUES 
+(0, 'Quotes', 0, 8, 8, 7, 9, 1, 0, 'true', 'true', 'true', 'true', 'true', 'true', 'true', 'ge_de', 'false', 'false', 'false', 'false', 'false','true', 'false', 'false', 'false'),
+(1, 'PurchaseOrder', 0, 8, 8, 7, 9, 1, 0, 'true', 'true', 'true', 'true', 'true', 'true', 'true', 'ge_de', 'true', 'true', 'true', 'true', 'true', 'true', 'false', 'false', 'false'),
+(2, 'SalesOrder', 0, 8, 8, 7, 9, 1, 0, 'true', 'true', 'true', 'true', 'true', 'true', 'true', 'ge_de', 'true', 'true', 'true', 'false', 'false','true', 'false', 'false', 'false'),
+(3, 'Invoice', 0, 8, 8, 7, 9, 0, 0, 'true', 'true', 'true', 'true', 'true', 'true', 'true', 'ge_de', 'true', 'true', 'true', 'true', 'true','true', 'true', 'true', 'false');
 
 CREATE TABLE IF NOT EXISTS `crmnow_pdffonts` (
   `fontid` int(2) NOT NULL default '0',
@@ -262,4 +263,8 @@ INSERT INTO `crmnow_pdfsettings` (`pdfieldid`, `pdffieldname`, `pdfeditable`, `p
 (92, 'paperf', 0, 'Quotes'),
 (93, 'paperf', 0, 'Invoice'),
 (94, 'paperf', 0, 'PuchaseOrder'),
-(95, 'paperf', 0, 'SalesOrder');
+(95, 'paperf', 0, 'SalesOrder'),
+(96, 'owneremail', 0, 'Quotes'),
+(97, 'owneremail', 0, 'Invoice'),
+(98, 'owneremail', 0, 'SalesOrder'),
+(99, 'owneremail', 0, 'PuchaseOrder');

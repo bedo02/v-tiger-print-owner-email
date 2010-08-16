@@ -77,6 +77,14 @@ if ($ownerphone =='true'){
 	$pdf->SetX($xmargin+$xdistance);
 	$pdf->Cell(20,$pdf->getFontSize(),$owner_phone,0,1);
 }
+if ($owneremail =='true'){
+	//owner label
+	$pdf->SetX($xmargin);
+	$pdf->Cell(20,$pdf->getFontSize(),$pdf_strings['ISSUER_EMAIL'],0,0);
+	//owner-content
+	$pdf->SetX($xmargin+$xdistance);
+	$pdf->Cell(20,$pdf->getFontSize(),$owner_email,0,1);
+}
 //print customer mark if set
 if ($req =='true'){
 	if ($customermark!='')

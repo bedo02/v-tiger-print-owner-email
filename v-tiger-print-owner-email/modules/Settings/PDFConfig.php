@@ -134,11 +134,17 @@ foreach($field_module as $fld_module)
 	If ($owner[$fld_module] =='true') $owner_selection[$fld_module] = 'checked="checked"';
 	else $owner_selection[$fld_module] = "";
 
-	//get oenerphone information
+	//get ownerphone information
 	$ownerphone[$fld_module] = $pdf_details[$fld_module]['ownerphone'];
 	If ($ownerphone[$fld_module] =='') $ownerphone[$fld_module]= 'true';
 	If ($ownerphone[$fld_module] =='true') $ownerphone_selection[$fld_module] = 'checked="checked"';
 	else $ownerphone_selection[$fld_module] = "";
+
+	//get owneremail information
+	$owneremail[$fld_module] = $pdf_details[$fld_module]['owneremail'];
+	If ($owneremail[$fld_module] =='') $owneremail[$fld_module]= 'true';
+	If ($owneremail[$fld_module] =='true') $owneremail_selection[$fld_module] = 'checked="checked"';
+	else $owneremail_selection[$fld_module] = "";
 
 	//get clientid information
 	$clientid[$fld_module] = $pdf_details[$fld_module]['clientid'];
@@ -250,6 +256,7 @@ $smarty->assign("SUMMARYRADIO",$summary_selection);
 $smarty->assign("LOGORADIO",$logo_selection);
 $smarty->assign("OWNER",$owner_selection);
 $smarty->assign("OWNERPHONE",$ownerphone_selection);
+$smarty->assign("OWNEREMAIL",$owneremail_selection);
 $smarty->assign("FOOTERRADIO",$footer_selection);
 $smarty->assign("FOOTERPAGERADIO",$footerpage_selection);
 $smarty->assign("FOOTERPAGERADIO",$footerpage_selection);

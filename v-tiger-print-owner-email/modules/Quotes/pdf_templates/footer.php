@@ -1,25 +1,26 @@
 <?php
 /*********************************************************************************
-** The contents of this file are subject to the vtiger CRM Public License Version 1.0
- * ("License"); You may not use this file except in compliance with the License
- * The Original Code is:  crm-now, www.crm-now.com
-* Portions created by crm-now are Copyright (C)  crm-now c/o im-netz Neue Medien GmbH.
-* All Rights Reserved.
- *
+** The contents of this file are subject to the GPL License v.3.0
+ * You may not use this file except in compliance with the License
+ * The Original Code is:  crm-now, www.crm-now.de
+ * All Rights Reserved.
+*
  ********************************************************************************/
+$name_ceo ="Martin Bednar";
+$irs_number ="IE4592069F";
+$org_taxid ="IE4592069F";
+$bank_account ="47120029";
+$bank_routing ="932515";
+$bank_name ="AIB Bank";
+$bank_swift = "AIBKIE2D";
+$bank_iban ="IE04AIBK93251547120029";
+$org_email = "info@mysite.sk";
 global $footerradio, $pageradio;
-global $FOOTER_PAGE, $default_font, $font_size_footer, $quote_no, $NUM_FACTURE_NAME, $pdf_strings, $footer_margin;
-global $org_name, $org_address, $org_city, $org_code, $org_country, $org_irs, $org_taxid, $org_phone, $org_fax, $org_website;
+global $FOOTER_PAGE, $default_font, $font_size_footer, $invoice_no, $NUM_FACTURE_NAME, $pdf_strings, $footer_margin;
+global $org_name, $org_address, $org_city, $org_code, $org_country, $org_irs, $org_phone, $org_fax, $org_website;
 global $VAR_PAGE, $VAR_OF;
-//variables for footer
-$name_ceo ="John Brown";
-$irs_number ="123456";
-$org_taxid ="383484848";
-$bank_account ="37373737";
-$bank_routing ="556677";
-$bank_name ="Sample Bank";
-$bank_swift = "SW 34333";
-$bank_iban ="ENG 000111";
+//bank information - labels from language files
+global $ACCOUNT_NUMBER, $ROUTING_NUMBER, $SWIFT_NUMBER, $IBAN_NUMBER;
 $this->SetFont($default_font,'',$font_size_footer);
 if ($footerradio =='true') {
 	$this->SetTextColor(120,120,120);
@@ -41,9 +42,9 @@ if ($footerradio =='true') {
 	$this->SetXY(PDF_MARGIN_LEFT+45 , -PDF_MARGIN_FOOTER+8);
 	$this->Cell($this->GetStringWidth($pdf_strings['VAR_PHONE']." ".$org_phone),$this->getFontSize(),$pdf_strings['VAR_PHONE']." ".$org_phone,0,0,'L');
 	$this->SetXY(PDF_MARGIN_LEFT+45 , -PDF_MARGIN_FOOTER+12);
-	$this->Cell($this->GetStringWidth($pdf_strings['VAR_FAX']." ".$org_fax),$this->getFontSize(),$pdf_strings['VAR_FAX']." ".$org_fax,0,0,'L');
+	$this->Cell($this->GetStringWidth($pdf_strings['VAR_EMAIL']." ".$org_email),$this->getFontSize(),$pdf_strings['VAR_EMAIL']." ".$org_email,0,0,'L');
 	$this->SetXY(PDF_MARGIN_LEFT+45 , -PDF_MARGIN_FOOTER+16);
-	$this->Cell($this->GetStringWidth($pdf_strings['VAR_TAXID'].' '.$org_taxid),$this->getFontSize(),$pdf_strings['VAR_TAXID'].' '.$org_taxid,0,0,'L');
+	$this->Cell($this->GetStringWidth($pdf_strings['VAR_TAXID']." ".$org_taxid),$this->getFontSize(),$pdf_strings['VAR_TAXID']." ".$org_taxid,0,0,'L'); 
 	$this->SetXY(PDF_MARGIN_LEFT+45 , -PDF_MARGIN_FOOTER+20);
 	$this->Cell($this->GetStringWidth($org_irs),$this->getFontSize(),$org_irs,0,0,'L');
 	//draw line
@@ -71,10 +72,10 @@ if ($footerradio =='true') {
 }
 if ($pageradio =='true') {
 	//reset colors
-	$this->SetTextColor(0,0,0);				
+	$this->SetTextColor(120,120,120);				
 	//Print page number with quote id
-	$this->SetXY(PDF_MARGIN_LEFT, -PDF_MARGIN_FOOTER+22);
-	$this->Cell(0,10,$pdf_strings['NUM_FACTURE_NAME'].' '.$quote_no.', '.$pdf_strings['VAR_PAGE'].' '.$this->PageNo().' '.$pdf_strings['VAR_OF'].' '.$this->getAliasNbPages(),0,0,'C');
+	$this->SetXY(PDF_MARGIN_LEFT+170, -PDF_MARGIN_FOOTER+22);
+	$this->Cell(0,20,$pdf_strings['VAR_PAGE'].' '.$this->PageNo().' '.$pdf_strings['VAR_OF'].' '.$this->getAliasNbPages(),0,0,'C');
 }
 	//reset colors
 	$this->SetTextColor(0,0,0);				

@@ -56,6 +56,7 @@ function getAllPDFDetails ($module)
 	$pdfsettings['pageradio'] = $adb->query_result($pdfsettings_result,0,'pageradio');
 	$pdfsettings['owner'] = $adb->query_result($pdfsettings_result,0,'owner');
 	$pdfsettings['ownerphone'] = $adb->query_result($pdfsettings_result,0,'ownerphone');
+	$pdfsettings['owneremail'] = $adb->query_result($pdfsettings_result,0,'owneremail');
 	$pdfsettings['poname'] = $adb->query_result($pdfsettings_result,0,'poname');
 	$pdfsettings['clientid'] = $adb->query_result($pdfsettings_result,0,'clientid');
 	$pdfsettings['carrier'] = $adb->query_result($pdfsettings_result,0,'carrier');
