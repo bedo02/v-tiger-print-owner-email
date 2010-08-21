@@ -344,6 +344,6 @@ function getcolumnwidht($column,$taxmode) {
 	$columnswidth = $defined_columnsizes[$column];
 return $columnswidth;
 }
-$pdf->Image('test/upload/Peciatka_200x116.jpg', $x='140', $current_y_location+20, $w=0, $h=0, $type='', $link='', $align='', $resize=false, $dpi=600, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false);
+// $pdf->Image('test/upload/Peciatka_200x116.jpg', $x='140', $current_y_location+20, $w=0, $h=0, $type='', $link='', $align='', $resize=false, $dpi=600, $palign='', $ismask=false, $imgmask=false, $border=0, $fitbox=false);
 
 ?>
