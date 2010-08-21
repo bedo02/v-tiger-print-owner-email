@@ -56,9 +56,9 @@ function createpdffile ($idnumber,$purpose='', $path='',$current_id='') {
 				include("modules/Invoice/language/de_de.lang.pdf.php");
 				$language = "DE";
 				break;
-			case "pl_pl":
-				include("modules/Invoice/language/pl_pl.lang.pdf.php");
-				$language = "PL";
+			case "sk_sk":
+				include("modules/Invoice/language/sk_sk.lang.pdf.php");
+				$language = "SK";
 				break;
 			default:
 				include("modules/Invoice/language/en_us.lang.pdf.php");
